@@ -1,0 +1,40 @@
+/* rtl:begin:ignore */
+html body {
+	color: $white;
+	background-color: $navy-dark;
+
+	button {
+		color: initial;
+	}
+}
+
+p, li {
+	color: rgba($white, 0.75);
+
+	& > a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.heading,
+h1, h2, h3, h4, h5, h6 {
+	color: $white;
+}
+
+*:focus {
+	outline: $border-width-sm solid $emerald;
+}
+
+/////////////////////////////////////////////
+// content theming
+/////////////////////////////////////////////
+
+.content a {
+  border-bottom: 1px solid $emerald;
+
+  &:hover, &:focus {
+    color: $emerald-light;
+  }
+}
+/* rtl:end:ignore */

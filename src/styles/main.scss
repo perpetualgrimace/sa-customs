@@ -1,0 +1,38 @@
+// embed fonts
+@font-face {
+  font-family: 'sst';
+  src: url('/data/fonts/SSTArabic-Roman.eot');
+  src: url('/data/fonts/SSTArabic-Roman.eot?#iefix') format('embedded-opentype'),
+       url('/data/fonts/SSTArabic-Roman.woff2') format('woff2'),
+       url('/data/fonts/SSTArabic-Roman.woff') format('woff'),
+       url('/data/fonts/SSTArabic-Roman.ttf') format('truetype'),
+       url('/data/fonts/SSTArabic-Roman.svg#SSTArabic-Roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sst';
+  src: url('/data/fonts/SSTArabic-Bold.eot');
+  src: url('/data/fonts/SSTArabic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/data/fonts/SSTArabic-Bold.woff2') format('woff2'),
+       url('/data/fonts/SSTArabic-Bold.woff') format('woff'),
+       url('/data/fonts/SSTArabic-Bold.ttf') format('truetype'),
+       url('/data/fonts/SSTArabic-Bold.svg#SSTArabic-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Utilities
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/utility-classes";
+// @import "1-utils/keyframes";
+
+// Base styles
+@import "base/reset";
+@import "base/typography";
+@import "base/theme";
+@import "base/layout";
+@import "base/icons";
+@import "base/form-fields";
+@import "base/print";

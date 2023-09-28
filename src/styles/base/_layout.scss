@@ -1,0 +1,57 @@
+/////////////////////////////////////////////
+// sticky footer via flexbox
+/////////////////////////////////////////////
+
+// https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+@supports (flex-wrap: wrap) {
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  [id="main"] {
+    display: flex; // allow main content to be centered
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+}
+
+/////////////////////////////////////////////
+// native smooth scrolling
+/////////////////////////////////////////////
+html {
+  // but not for users that get dizzy
+  @media screen and (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+// make room above headings when scrolling
+[id] {
+  scroll-margin-top: $sp-lg;
+
+  @media (min-width: $bp-nav) {
+    scroll-margin-top: $nav-height + $sp-lg;
+  }
+}
+
+/////////////////////////////////////////////
+// single centered column
+/////////////////////////////////////////////
+
+.text-column {
+  width: 40rem;
+  max-width: 100%;
+  margin: -3rem auto $sp-sm auto; /* offset hero and center */
+}
+
+
+/////////////////////////////////////////////
+// content vertical spacing
+/////////////////////////////////////////////
+
+.content {
+  * + * {
+    margin-top: 1.5em;
+  }
+}

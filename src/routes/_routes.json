@@ -1,0 +1,53 @@
+[
+	{
+		"title": "ports.navLink",
+		"href": "./ports",
+		"children": [
+			{ "title": "ports.airports.navLink", "href": "ports/air-ports" },
+			{ "title": "ports.landports.navLink", "href": "ports/land-ports" },
+			{ "title": "ports.seaports.navLink", "href": "ports/sea-ports" }
+		]
+	},
+	{
+		"title": "importsAndExports.navLink",
+		"href": "imports-and-exports",
+		"children": [
+			{
+				"grouping": "importsAndExports.imports.navLink",
+				"children": [
+					{ "title": "importsAndExports.imports.all", "href": "imports-and-exports/imports/all-imports" },
+					{ "title": "importsAndExports.imports.food", "href": "imports-and-exports/imports/food-product-imports" },
+					{ "title": "importsAndExports.imports.machine", "href": "imports-and-exports/imports/machine-imports" },
+					{ "title": "importsAndExports.imports.transporatation", "href": "imports-and-exports/imports/transportation-imports" }
+				]
+			},
+			{
+				"grouping": "importsAndExports.exports.navLink",
+				"children": [
+					{ "title": "importsAndExports.exports.all", "href": "imports-and-exports/exports/all-exports" },
+					{ "title": "importsAndExports.exports.crude", "href": "imports-and-exports/exports/crude-exports" },
+					{ "title": "importsAndExports.exports.nonCrude", "href": "imports-and-exports/exports/non-crude-exports" }
+				]
+			}
+		]
+	},
+	{
+		"title": "ctc.navLink",
+		"href": "clearance-time-calculator"
+	},
+	{
+		"title": "dataExplorer.navLink",
+		"href": "data-explorer" 
+	},
+	{
+		"title": "about.navLink",
+		"href": "about/background",
+		"children": [
+			{ "title": "about.background.navLink", "href": "about/background" },
+			{ "title": "about.calculations.navLink", "href": "about/calculations" },
+			{ "title": "about.faq.navLink", "href": "about/faq" },
+			{ "title": "about.definitions.navLink", "href": "about/definitions" },
+			{ "title": "about.disclaimer.navLink", "href": "about/disclaimer" }
+		]
+	}
+]

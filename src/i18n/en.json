@@ -1,0 +1,126 @@
+{
+    "_": {
+        "avgExportClearanceTime": "Average export clearance time",
+        "avgImportClearanceTime": "Average import clearance time",
+        "clearanceTime": "Clearance time",
+        "countryOfOrigin": "Country of origin",
+        "destinationCountry": "Destination country",
+        "exports": "Exports",
+        "footer": {
+            "copyright": "All rights are reserved Saudi Customs © 2019",
+            "saudiCustomsLogoAltText": "Saudi Customs",
+            "visionLogoAltText": "Vision for 2030"
+        },
+        "growth": "Growth",
+        "hoursAbbreviated": "hrs",
+        "importExportControlLabel": "Dataset",
+        "imports": "Imports",
+        "nav": {
+            "backToHomePage": "Back to home page",
+            "mainNavLabel": "Main navigation",
+            "menuButtonLabel": "Menu"
+        },
+        "portOfEntry": "Port of entry",
+        "portOfExit": "Port of exit",
+        "productExported": "Product exported",
+        "productImported": "Product imported",
+        "title": "Saudi Customs Data Portal",
+        "value": "Value",
+        "year": "Year",
+        "yearFrom": "From",
+        "yearTo": "To"
+    },
+    "about": {
+        "background": {
+            "navLink": "Background"
+        },
+        "calculations": {
+            "navLink": "Calculations"
+        },
+        "definitions": {
+            "navLink": "Definitions"
+        },
+        "disclaimer": {
+            "navLink": "Disclaimer"
+        },
+        "faq": {
+            "navLink": "FAQ"
+        },
+        "navLink": "About <span class='u-visually-hidden'>Saudi Customs Data Portal</span>"
+    },
+    "ctc": {
+        "InadequateTradeActivity": "Inadequate trade activity",
+        "InadequateTradeActivityInstructions": "Please try a different selection",
+        "controlsLabel": "Controls",
+        "navLink": "<span class='u-visually-hidden'>Sea port </span>Clearance time calculator",
+        "productCode": "HS4 code",
+        "productFormatLabel": "Product format",
+        "productName": "Product name",
+        "productSelectLabel": "Product",
+        "title": "Sea port clearance time calculator"
+    },
+    "dataExplorer": {
+        "allCountries": "All countries",
+        "allProducts": "All products",
+        "controlsLabel": "Visualization configuration",
+        "displayLabel": "Display",
+        "downloadButton": "Download data",
+        "enlargeVisualization": "Enlarge visualization",
+        "minimizeVisualization": "Minimize visualization",
+        "navLink": "Data explorer",
+        "vis": "Visualization",
+        "visTypes": {
+            "bar": "Bar chart",
+            "donut": "Donut chart",
+            "line": "Line chart",
+            "stacked-area": "Stacked area",
+            "table": "Data table",
+            "treemap": "Treemap"
+        }
+    },
+    "home": {
+        "exploreMoreData": "Explore more data",
+        "headline": "Transparency, trade, and data-driven insights",
+        "navLink": "Home",
+        "relatedHeading": "Explore more data",
+        "statsHeading": "Sea port clearance times",
+        "subhead": "The most relevant data on Saudi Arabia’s ports and commerce, at your fingertips",
+        "topCountries": "Top countries",
+        "topCountriesByAvgExportClearanceTime": "<span class='u-visually-hidden'>Top countries by</span> Average export clearance time",
+        "topCountriesByAvgImportClearanceTime": "<span class='u-visually-hidden'>Top countries by</span> Average import clearance time"
+    },
+    "importsAndExports": {
+        "exports": {
+            "all": "All exports",
+            "crude": "Crude exports",
+            "navLink": "Exports",
+            "nonCrude": "Non-crude exports",
+            "totalSeaportExports": "Total exports"
+        },
+        "imports": {
+            "all": "All imports",
+            "food": "Food product imports",
+            "machine": "Machine imports",
+            "navLink": "Imports",
+            "totalSeaportImports": "Total imports",
+            "transporatation": "Transportation imports"
+        },
+        "navLink": "Imports & exports",
+        "title": "Imports & exports",
+        "topExportersByValue": "Top exporters by value",
+        "topImportersByValue": "Top importers by value",
+        "topProductsByValue": "Top products by value"
+    },
+    "ports": {
+        "airports": {
+            "navLink": "Airports"
+        },
+        "landports": {
+            "navLink": "Land ports"
+        },
+        "seaports": {
+            "navLink": "Sea ports"
+        },
+        "title": "Ports"
+    }
+}

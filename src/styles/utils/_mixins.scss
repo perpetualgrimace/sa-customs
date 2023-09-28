@@ -1,0 +1,227 @@
+// TODO: customize
+
+////////////////////////////////
+// typography
+////////////////////////////////
+
+// body fonts
+@mixin body-font {
+  font-family : $body-font;
+  font-style  : normal;
+  font-weight : 400;
+}
+@mixin body-font-italic {
+  font-family : $body-font;
+  font-style  : italic;
+  font-weight : 400;
+}
+@mixin body-font-bold {
+  font-family : $body-font;
+  font-style  : normal;
+  font-weight : bold;
+}
+
+// heading fonts
+@mixin heading-font {
+  font-family : $heading-font;
+  font-style  : normal;
+  font-weight : bold;
+}
+
+// font sizing & default line height
+@mixin font-xs { 
+  font-size: $font-xs;   // 14px
+  line-height: 1.0rem;   // 20px
+}
+@mixin font-sm { 
+  font-size: $font-sm;   // 16px
+  line-height: 1.5rem;   // 30px
+}
+@mixin font-md { 
+  font-size: $font-md;   // 18px
+  line-height: 1.5rem;   // 30px
+}
+@mixin font-lg { 
+  font-size: $font-lg;   // 24px
+  line-height: 1.5rem;   // 30px
+}
+@mixin font-xl { 
+  font-size: $font-xl;   // 36px
+  line-height: 2.5rem;   // 50px
+}
+@mixin font-xxl { 
+  font-size: $font-xxl;  // 48px
+  line-height: 3.0rem;   // 60px
+}
+@mixin font-xxxl { 
+  font-size: $font-xxxl; // 60px
+  line-height: 3.5rem;   // 70px
+}
+
+// width usually needed as well
+@mixin overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+////////////////////////////////
+// layout & positioning
+////////////////////////////////
+
+// Psuedo elements
+@mixin pseudo {
+  content: '';
+  display: block;
+}
+
+/* rtl:begin:ignore */
+
+// Fill up an absolutely 100% amount of space; let yourself be huge
+@mixin absolute-expand {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// centered elements, the dumb but sometimes useful way
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin absolute-vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+@mixin absolute-horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+// for screen readers
+@mixin visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* rtl:end:ignore */
+
+
+////////////////////////////////
+// background images
+////////////////////////////////
+
+// hidpi mixin, somewhat inspired by responsive.scss.
+@mixin hidpi($multiplier: 1.5) {
+  @media (min-device-pixel-ratio: $multiplier), (min-resolution: (96dpi * $multiplier)) {
+    @content;
+  }
+}
+
+// Svg background with fallback and retina support
+@mixin svg($filename, $path : "img/") {
+  background-image: url(../../#{$path}#{$filename}.png);
+  background-image:
+    linear-gradient(transparent, transparent),
+    url(../../#{$path}#{$filename}.svg);
+
+  // hi res
+  @include hidpi {
+    background-image: url(../../#{$path}#{$filename}@2x.png);
+    background-image:
+      linear-gradient(transparent, transparent),
+      url(../../#{$path}#{$filename}.svg);
+  }
+}
+
+// Repeating patterns
+@mixin pattern($filename: pattern, $extension: png) {
+  background-image: url(../../img/backgrounds/#{$filename}.#{$extension});
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: -20% 0;
+
+  @include hidpi {
+    background-image: url(../../img/backgrounds/#{$filename}@2x.#{$extension});
+  }
+}
+
+////////////////////////////////
+// visual depth
+////////////////////////////////
+
+@mixin box-shadow($shadow-color: $shadow) {
+  box-shadow: 0 1px 0.25em $shadow-color;
+}
+
+@mixin text-shadow($shadow-color: $shadow) {
+  text-shadow: 0 1px 0.25em $shadow-color;
+}
+
+@mixin radial-gloss {
+  background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
+}
+
+////////////////////////////////
+// nav / dropdown-menu
+////////////////////////////////
+
+@mixin section-inner {
+  /* sizing */
+  width: $container-width;
+  max-width: 100%;
+  /* positioning */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+////////////////////////////////
+// nav / dropdown-menu
+////////////////////////////////
+
+@mixin nav-link-theme {
+  /* typography */
+  @include font-xs;
+  @include body-font-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  /* theming */
+  opacity: 0.8;
+  transition: opacity $timing;
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+  /* current page */
+  &[aria-current], &[aria-current]:after {
+    opacity: 1;
+  }
+  &[aria-current]:after {
+    transform: none;
+    z-index: auto;
+  }
+}
+
+@mixin dropdown-hidden {
+  position  : absolute;
+  transform : translate(0, -1rem);
+  opacity   : 0;
+  clip      : rect(0 0 0 0);
+  overflow  : hidden;
+  z-index   : -100;
+}
+@mixin dropdown-visible {
+  transform : translate(0, 0);
+  opacity   : 1;
+  clip      : auto;
+  overflow  : visible;
+  z-index   : 2;
+}

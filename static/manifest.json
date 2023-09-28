@@ -1,0 +1,8 @@
+{
+	"background_color": "#0A253E",
+	"theme_color": "#ffffff",
+	"name": "Saudi Customs Data Portal",
+	"short_name": "Saudi Customs Data",
+	"display": "minimal-ui",
+	"start_url": "/data",
+}

@@ -1,0 +1,110 @@
+////////////////////////////////
+// typography
+////////////////////////////////
+
+// TODO: test on staging server
+$body-font: "sst", "SST Arabic", Helvetica, Arial, sans-serif;
+$heading-font: "sst", "SST Arabic", Helvetica, Arial, sans-serif;
+
+////////////////////////////////
+// colors
+////////////////////////////////
+
+// primary accent
+$emerald-light : #5ED7C8;
+$emerald       : #00B09A;
+$emerald-dark  : #00665E;
+
+// secondary accents
+$gold-light    : #D6AF6B;
+$gold          : #8A6D3B;
+$gold-dark     : #66512C;
+
+$salmon-light  : #FF6F6F;
+$salmon        : #D95959;
+$salmon-dark   : #AD4545;
+
+// deep blues
+$navy-light    : #14354E;
+$navy          : #0A253E;
+$navy-dark     : #071A2B;
+
+// grayscale
+$white         : #FFFFFF;
+$light-1       : #F8F8F8;
+$light-2       : #E5E5E5;
+$light-3       : #CFCFCF;
+$gray          : #C0C0C0;
+$dark-1        : #999999;
+$dark-2        : #5C5C5C;
+$dark-3        : #333333;
+$black         : #171717;
+
+// shadow
+$shadow        : rgba($dark-1, 0.35);
+$shadow-dark   : rgba($black, 0.5);
+
+// social media
+// $facebook-color  : #3b5998;
+// $twitter-color   : #00aced;
+// $instagram-color : #e4405f;
+
+
+////////////////////////////////
+// font sizes
+////////////////////////////////
+
+$font-xs   : 0.7rem; // 14px
+$font-sm   : 0.8rem; // 16px
+$font-md   : 0.9rem; // 18px
+$font-lg   : 1.2rem; // 24px
+$font-xl   : 1.8rem; // 36px
+$font-xxl  : 2.4rem; // 48px
+$font-xxxl : 3.0rem; // 60px
+
+////////////////////////////////
+// breakpoints
+////////////////////////////////
+
+// TODO: adjust as needed
+$bp-xs  : 26rem; // 520px
+$bp-sm  : 40rem;
+$bp-md  : 48rem; // 960px
+$bp-nav : 60rem; // 1080px
+$bp-lg  : 72rem; // 1440px
+$bp-xl  : 100rem;
+
+////////////////////////////////
+// miscellaneous measurements
+////////////////////////////////
+
+// spacing
+$sp-xs : 0.25rem;
+$sp-sm : 0.5rem;
+$sp-md : 1.0rem;
+$sp-lg : 2.0rem;
+$sp-xl : 4.0rem;
+
+// layout
+$nav-height         : 3.4rem; // 68px
+$logo-width         : 8.6rem; // 172px
+$container-width    : 64rem;
+$sidebar-width      : 13rem;
+
+// border
+$border-width-sm    : 1px;
+$border-width-md    : 2px;
+$border-width-lg    : 6px;
+
+// border radius
+$border-radius-sm   : 2px;
+$border-radius-lg   : 4px;
+
+
+////////////////////////////////
+// motion
+////////////////////////////////
+
+$timing-fast    : 0.1s ease-out;
+$timing         : 0.2s ease-out;
+$timing-long    : 0.3s ease-out;

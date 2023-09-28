@@ -1,0 +1,15 @@
+/////////////////////////////////////////////
+// inlined svg icon defaults
+/////////////////////////////////////////////
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5em;
+  height: auto;
+
+  path {
+    fill: $gray;
+    transition: fill $timing;
+  }
+}

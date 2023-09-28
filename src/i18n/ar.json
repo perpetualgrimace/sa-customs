@@ -1,0 +1,126 @@
+{
+    "_": {
+        "avgExportClearanceTime": "معدل زمن التخليص الجمركي للصادرات",
+        "avgImportClearanceTime": "معدل زمن التخليص الجمركي للواردات",
+        "clearanceTime": "زمن التخليص الجمركي",
+        "countryOfOrigin": "دولة المصدر",
+        "destinationCountry": "دولة الوجهه",
+        "exports": "الصادرات",
+        "footer": {
+            "copyright": "جميع الحقوق محفوظة الجمارك السعودية © 2019",
+            "saudiCustomsLogoAltText": "الجمارك السعودية",
+            "visionLogoAltText": "رؤية 2030"
+        },
+        "growth": "النمو",
+        "hoursAbbreviated": "س",
+        "importExportControlLabel": "جدول البيانات",
+        "imports": "الواردات",
+        "nav": {
+            "backToHomePage": "العودة إلى الصفحة الرئيسية",
+            "mainNavLabel": "القائمة الرئيسية",
+            "menuButtonLabel": "القائمة"
+        },
+        "portOfEntry": "منفذ الوصول",
+        "portOfExit": "منفذ الخروج",
+        "productExported": "المنتج المصرد",
+        "productImported": "المنتج النستورد",
+        "title": "منصة بيانات الجمارك السعودية",
+        "value": "قيمة",
+        "year": "السنة",
+        "yearFrom": "من",
+        "yearTo": "إلى"
+    },
+    "about": {
+        "background": {
+            "navLink": "الخلفية"
+        },
+        "calculations": {
+            "navLink": "الحسابات"
+        },
+        "definitions": {
+            "navLink": "التعريفات"
+        },
+        "disclaimer": {
+            "navLink": "إشعار إخلاء مسؤولية"
+        },
+        "faq": {
+            "navLink": "الأسئلة الشائعة"
+        },
+        "navLink": "المزيد <span class='u-visually-hidden'>منصة بيانات الجمارك السعودية</span>"
+    },
+    "ctc": {
+        "InadequateTradeActivity": "نشاط تجاري غير كاف",
+        "InadequateTradeActivityInstructions": "الرجاء اختيار نشاط آخر",
+        "controlsLabel": "خيارات التحكم",
+        "navLink": "<span class='u-visually-hidden'>منفذ بحري </span>حاسبة زمن التخليص الجمركي",
+        "productCode": "HS4 رمز",
+        "productFormatLabel": "صيغة المنتج",
+        "productName": "اسم المنتج",
+        "productSelectLabel": "المنتج",
+        "title": "حاسبة زمن التخليص الجمركي للمنافذ البحرية"
+    },
+    "dataExplorer": {
+        "allCountries": "جميع الدول",
+        "allProducts": "جميع المنتجات",
+        "controlsLabel": "تخصيص الرسم البياني",
+        "displayLabel": "العرض",
+        "downloadButton": "تحميل البيانات",
+        "enlargeVisualization": "تكبير الرسم البياني",
+        "minimizeVisualization": "تصغير الرسم البياني",
+        "navLink": "مستكشف البيانات",
+        "vis": "رسم بياني",
+        "visTypes": {
+            "bar": "مخطط عمودي",
+            "donut": "مخطط دونات",
+            "line": "مخطط خطي",
+            "stacked-area": "مخطط مساحي مرصوف",
+            "table": "جدول بيانات",
+            "treemap": "مخطط هيكلي"
+        }
+    },
+    "home": {
+        "exploreMoreData": "تصفح المزيد من البيانات",
+        "headline": "الشفافية، التجارة، والمعلومات المستندة إلى البيانات",
+        "navLink": "الصفحة الرئيسية",
+        "relatedHeading": "استكشاف المزيد من البيانات",
+        "statsHeading": "أزمنة التخليص الجمركي للمنافذ البحرية",
+        "subhead": "البيانات الأكثر دقة بالمنافذ والتجارة السعودية، في متناول يدك",
+        "topCountries": "البلدان الأعلى",
+        "topCountriesByAvgExportClearanceTime": "<span class='u-visually-hidden'>البلدان الأعلى من حيث</span> معدل زمن التخليص الجمركي للصادرات",
+        "topCountriesByAvgImportClearanceTime": "<span class='u-visually-hidden'>البلدان الأعلى من حيث</span> معدل زمن التخليص الجمركي للواردات"
+    },
+    "importsAndExports": {
+        "exports": {
+            "all": "جميع الصادرات",
+            "crude": "صادرات النفط الخام",
+            "navLink": "الصادرات",
+            "nonCrude": "صادرات غير النفط الخام",
+            "totalSeaportExports": "إجمالي صادرات المنافذ البحرية"
+        },
+        "imports": {
+            "all": "جميع الواردات",
+            "food": "واردات المنتجات الغذائية",
+            "machine": "واردات الماكينات",
+            "navLink": "الواردات",
+            "totalSeaportImports": "إجمالي واردات المنافذ البحرية",
+            "transporatation": "واردات المواصلات"
+        },
+        "navLink": "الصادرات والواردات",
+        "title": "الصادرات والواردات",
+        "topExportersByValue": "أبرز عشرة دول حسب القيمة",
+        "topImportersByValue": "أبرز عشرة دول حسب القيمة",
+        "topProductsByValue": "أبرز عشرة منتجات حسب القيمة"
+    },
+    "ports": {
+        "airports": {
+            "navLink": "منفذ جوي"
+        },
+        "landports": {
+            "navLink": "منفذ بري"
+        },
+        "seaports": {
+            "navLink": "منفذ بحري"
+        },
+        "title": "منافذ"
+    }
+}
