@@ -18,10 +18,10 @@
 		{
 			title: "about.navLink",
 			href: routes[4].children[3].href, // default to definitions
-			children: [
-				routes[4].children[3], // definitions
-				routes[4].children[4], // disclaimer
-			]
+			// children: [
+			// 	routes[4].children[3], // definitions
+			// 	routes[4].children[4], // disclaimer
+			// ]
 		}
 	];
 

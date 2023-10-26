@@ -608,7 +608,13 @@
 			/* Button overrides */
 			padding: 0.5em;
 			border-radius: 50%;
+			width: 2.5rem;
+			height: 2.5rem;
 			background-color: $navy-light;
+
+			> svg {
+				@include absolute-center;
+			}
 		}
 	}
 
