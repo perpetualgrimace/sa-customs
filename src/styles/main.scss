@@ -1,23 +1,24 @@
 // embed fonts
 @font-face {
-  font-family: 'sst';
-  src: url('/data/fonts/SSTArabic-Roman.eot');
-  src: url('/data/fonts/SSTArabic-Roman.eot?#iefix') format('embedded-opentype'),
-       url('/data/fonts/SSTArabic-Roman.woff2') format('woff2'),
-       url('/data/fonts/SSTArabic-Roman.woff') format('woff'),
-       url('/data/fonts/SSTArabic-Roman.ttf') format('truetype'),
-       url('/data/fonts/SSTArabic-Roman.svg#SSTArabic-Roman') format('svg');
+  font-family: "sst";
+  src: url("/fonts/SSTArabic-Roman.eot");
+  src: url("/fonts/SSTArabic-Roman.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SSTArabic-Roman.woff2") format("woff2"),
+    url("/fonts/SSTArabic-Roman.woff") format("woff"),
+    url("/fonts/SSTArabic-Roman.ttf") format("truetype"),
+    url("/fonts/SSTArabic-Roman.svg#SSTArabic-Roman") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'sst';
-  src: url('/data/fonts/SSTArabic-Bold.eot');
-  src: url('/data/fonts/SSTArabic-Bold.eot?#iefix') format('embedded-opentype'),
-       url('/data/fonts/SSTArabic-Bold.woff2') format('woff2'),
-       url('/data/fonts/SSTArabic-Bold.woff') format('woff'),
-       url('/data/fonts/SSTArabic-Bold.ttf') format('truetype'),
-       url('/data/fonts/SSTArabic-Bold.svg#SSTArabic-Bold') format('svg');
+  font-family: "sst";
+  src: url("/fonts/SSTArabic-Bold.eot");
+  src: url("/fonts/SSTArabic-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SSTArabic-Bold.woff2") format("woff2"),
+    url("/fonts/SSTArabic-Bold.woff") format("woff"),
+    url("/fonts/SSTArabic-Bold.ttf") format("truetype"),
+    url("/fonts/SSTArabic-Bold.svg#SSTArabic-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
 }
