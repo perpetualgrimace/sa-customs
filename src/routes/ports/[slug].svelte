@@ -1,11 +1,11 @@
 <script>
 	import {stores} from '@sapper/app';
 	import { _ } from 'svelte-i18n';
-	
-	import Hero from '../../../../components/Hero.svelte';
-	import Section from '../../../../components/Section.svelte';
-	import Stat from '../../../../components/Stat.svelte';
-	import Substats from '../../../../components/Substats.svelte';
+
+	import Hero from '../../components/Hero.svelte';
+	import Section from '../../components/Section.svelte';
+	import Stat from '../../components/Stat.svelte';
+	import Substats from '../../components/Substats.svelte';
 
 	// retrieve slug from store
 	const {page} = stores();
@@ -53,7 +53,7 @@
 				<td>col 2</td>
 			</tr>
 		</tbody>
-	</table>	
+	</table>
 </Section>
 
 

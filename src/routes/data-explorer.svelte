@@ -1,43 +1,43 @@
 <script>
 	import { locale, _ } from 'svelte-i18n';
 
-	import convertArrayOfObjectsToCSV from '../../../helpers/convertArrayOfObjectsToCSV.js';
-	import slugify from '../../../helpers/slugify.js';
+	import convertArrayOfObjectsToCSV from '../helpers/convertArrayOfObjectsToCSV.js';
+	import slugify from '../helpers/slugify.js';
 
-	import Button from '../../../components/Button.svelte';
-	import ButtonGroup from '../../../components/ButtonGroup.svelte';
-	import Section from '../../../components/Section.svelte';
-	import Select from '../../../components/Select.svelte';
-	import StatCard from '../../../components/StatCard.svelte';
+	import Button from '../components/Button.svelte';
+	import ButtonGroup from '../components/ButtonGroup.svelte';
+	import Section from '../components/Section.svelte';
+	import Select from '../components/Select.svelte';
+	import StatCard from '../components/StatCard.svelte';
 
-	import Expand from '../../../components/icons/Expand.svelte';
-	import Contract from '../../../components/icons/Contract.svelte';
+	import Expand from '../components/icons/Expand.svelte';
+	import Contract from '../components/icons/Contract.svelte';
 
-	import Vis from '../../../components/vis/Vis.svelte';
-	import Table from '../../../components/vis/Table.svelte';
+	import Vis from '../components/vis/Vis.svelte';
+	import Table from '../components/vis/Table.svelte';
 
-	import Bar from '../../../components/icons/vis/Bar.svelte';
-	import Line from '../../../components/icons/vis/Line.svelte';
-	// import StackedArea from '../../../components/icons/vis/StackedArea.svelte';
-	// import Donut from '../../../components/icons/vis/Donut.svelte';
-	import Treemap from '../../../components/icons/vis/Treemap.svelte';
+	import Bar from '../components/icons/vis/Bar.svelte';
+	import Line from '../components/icons/vis/Line.svelte';
+	// import StackedArea from '../components/icons/vis/StackedArea.svelte';
+	// import Donut from '../components/icons/vis/Donut.svelte';
+	import Treemap from '../components/icons/vis/Treemap.svelte';
 
-	import {group_hierarchical_data} from '../../../helpers/data.js'
+	import {group_hierarchical_data} from '../helpers/data.js'
 
 
 	// data
-	import {explorer_imports_year_country_product} from '../../../data/explorer_imports_year_country_product.svelte';
-	import {explorer_imports_year_country} from '../../../data/explorer_imports_year_country.svelte';
-	import {explorer_imports_year_product} from '../../../data/explorer_imports_year_product.svelte';
-	import {explorer_imports_year} from '../../../data/explorer_imports_year.svelte';
-	import {explorer_exports_year_country_product} from '../../../data/explorer_exports_year_country_product.svelte';
-	import {explorer_exports_year_country} from '../../../data/explorer_exports_year_country.svelte';
-	import {explorer_exports_year_product} from '../../../data/explorer_exports_year_product.svelte';
-	import {explorer_exports_year} from '../../../data/explorer_exports_year.svelte';
+	import {explorer_imports_year_country_product} from '../data/explorer_imports_year_country_product.svelte';
+	import {explorer_imports_year_country} from '../data/explorer_imports_year_country.svelte';
+	import {explorer_imports_year_product} from '../data/explorer_imports_year_product.svelte';
+	import {explorer_imports_year} from '../data/explorer_imports_year.svelte';
+	import {explorer_exports_year_country_product} from '../data/explorer_exports_year_country_product.svelte';
+	import {explorer_exports_year_country} from '../data/explorer_exports_year_country.svelte';
+	import {explorer_exports_year_product} from '../data/explorer_exports_year_product.svelte';
+	import {explorer_exports_year} from '../data/explorer_exports_year.svelte';
 
 	// dims
-	import {explorer_countries} from '../../../data/explorer_countries.svelte';
-	import {explorer_hs2} from '../../../data/explorer_hs2.svelte';
+	import {explorer_countries} from '../data/explorer_countries.svelte';
+	import {explorer_hs2} from '../data/explorer_hs2.svelte';
 
 	/////////////////////////////////
 	// data
@@ -301,7 +301,7 @@
 	// product is a string (which may be "all-products")
 	// returns an array of objects { year, value }
 	function fetchData(vis, datasets, years, country, product) {
-		
+
 		if (debug) console.log("isTimeSeries:", isTimeSeries(vis));
 
 		return isTimeSeries(vis)
@@ -324,7 +324,7 @@
 				maxy = point.value;
 			}
 		}
-		
+
 		return [miny, maxy];
 	}
 
@@ -402,36 +402,36 @@
 
 		<!-- import/export select -->
 		<ButtonGroup label={$_("_.importExportControlLabel")} classes="u-margin-bottom-sm" inline={false}>
-			<Button 
+			<Button
 				on:click={() => toggleMode("import")}
 				pressed={mode === "import"}
 			>
 				{$_("_.imports")}
 			</Button>
-			<Button 
-				on:click={() => toggleMode("export")} 
+			<Button
+				on:click={() => toggleMode("export")}
 				pressed={mode === "export"}
 			>
 				{$_("_.exports")}
 			</Button>
 		</ButtonGroup>
 
-		<!-- 
-			NOTE: a select for measure could go here, 
-			or it could replace the import/export select 
+		<!--
+			NOTE: a select for measure could go here,
+			or it could replace the import/export select
 		-->
 
 		<!-- visualization or table -->
 		{#if visType !== "treemap"}
 			<ButtonGroup label={$_("dataExplorer.displayLabel")} classes="u-margin-top-lg u-margin-bottom-sm" inline={false}>
-				<Button 
+				<Button
 					on:click={() => toggleShowVis(true)}
 					pressed={showVis === true}
 				>
 					{$_("dataExplorer.vis")}
 				</Button>
-				<Button 
-					on:click={() => toggleShowVis(false)} 
+				<Button
+					on:click={() => toggleShowVis(false)}
 					pressed={showVis === false}
 				>
 					{$_("dataExplorer.visTypes.table")}
@@ -443,7 +443,7 @@
 		{#if showVis}
 			<ButtonGroup label={$_("dataExplorer.vis")} classes="u-margin-top-{ visType === "treemap" ? "lg" : "sm" }" inline={false}>
 				{#each visTypes as vis}
-					<Button 
+					<Button
 						on:click={() => setVisType(vis.type)}
 						pressed={visType === vis.type}
 						classes="explorer-controls-button"
@@ -456,7 +456,7 @@
 		{/if}
 
 		<!-- destination country / country of origin -->
-		<Select 
+		<Select
 			label={mode === "import" ? $_("_.countryOfOrigin") : $_("_.destinationCountry")}
 			classes="u-margin-top-lg u-margin-bottom-sm"
 			options={countriesList}
@@ -466,7 +466,7 @@
 		/>
 
 		<!-- product -->
-		<Select 
+		<Select
 			label={mode === "import" ? $_("_.productImported") : $_("_.productExported")}
 			classes="u-margin-bottom-sm"
 			value={selected.product}
@@ -476,7 +476,7 @@
 
 		<!-- date -->
 		{#if showVis && (visType === "donut" || visType === "treemap")}
-			<Select 
+			<Select
 				label={$_("_.year")}
 				classes="u-margin-bottom-md"
 				value={selected.toYear}
@@ -486,13 +486,13 @@
 		<!-- date range -->
 		{:else}
 			<div class="explorer-year-select-wrapper">
-				<Select 
+				<Select
 					label={$_("_.yearFrom")}
 					value={selected.fromYear}
 					options={fromYears}
 					onChange={e => updateSelected("fromYear", e.target.value)}
 				/>
-				<Select 
+				<Select
 					label={$_("_.yearTo")}
 					value={selected.toYear}
 					options={toYears}

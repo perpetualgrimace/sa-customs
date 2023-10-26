@@ -28,7 +28,7 @@
 
 <li class={navItemClasses} use:clickOutside on:click_outside={handleClickOutside}>
 	<!-- main link -->
-	<a href={`./${$locale}/Data/${data.href}` || null}
+	<a href={`./${data.href}` || null}
 		class="nav-link"
 		aria-current={checkActiveSegment(data.href, segment, $locale) ? "page" : null}
 		on:click
@@ -56,7 +56,7 @@
 						{/if}
 
 						<li class="nav-dropdown-item">
-							<a href={`./${$locale}/Data/${groupedChild.href}` || null}
+							<a href={`./${groupedChild.href}` || null}
 								class="nav-dropdown-link"
 								aria-current={checkActivePage(groupedChild.href, segment) ? "page" : null}
 							>
@@ -68,7 +68,7 @@
 				<!-- linear list -->
 				{:else}
 					<li class="nav-dropdown-item">
-						<a href={`./${$locale}/Data/${child.href}` || null}
+						<a href={`./${child.href}` || null}
 							class="nav-dropdown-link"
 							aria-current={checkActivePage(child.href, segment) ? "page" : null}
 						>
@@ -111,7 +111,7 @@
 			background-color: $emerald;
 			opacity: 0;
 			transform: translateY(100%);
-			transition: 
+			transition:
 				opacity $timing,
 				transform $timing;
 		}
@@ -174,10 +174,10 @@
 		left: -0.875em; /* offset link padding */
 		/* theming */
 		background-color: $navy-light;
-		box-shadow: 0 2px 1rem rgba($navy-dark, 0.75);	
+		box-shadow: 0 2px 1rem rgba($navy-dark, 0.75);
 		/* initially hidden */
 		@include dropdown-hidden;
-		transition: 
+		transition:
 			opacity $timing-fast 0.2s,
 			transform $timing-fast 0.2s;
 	}
@@ -209,7 +209,7 @@
 			/* theming */
 			background-color: $emerald;
 			opacity: 0;
-			transition: 
+			transition:
 				opacity $timing,
 				transform $timing;
 		}

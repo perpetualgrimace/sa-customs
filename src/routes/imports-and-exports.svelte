@@ -18,9 +18,9 @@
 <script>
 	import { locale, _ } from 'svelte-i18n';
 
-	import Hero from '../../../components/Hero.svelte';
-	import Section from '../../../components/Section.svelte';
-	import Card from '../../../components/Card.svelte';
+	import Hero from '../components/Hero.svelte';
+	import Section from '../components/Section.svelte';
+	import Card from '../components/Card.svelte';
 </script>
 
 
@@ -38,7 +38,7 @@
 			{#each importPages as page}
 				<Card
 					title={$_(page.title)}
-					href="./{$locale}/Data/imports-and-exports/imports/{page.slug}"
+					href="./imports-and-exports/imports/{page.slug}"
 					img="imports-and-exports/all"
 				/>
 			{/each}
@@ -51,7 +51,7 @@
 			{#each exportPages as page}
 				<Card
 					title={$_(page.title)}
-					href="./{$locale}/Data/imports-and-exports/exports/{page.slug}"
+					href="./imports-and-exports/exports/{page.slug}"
 					img="imports-and-exports/all"
 				/>
 			{/each}

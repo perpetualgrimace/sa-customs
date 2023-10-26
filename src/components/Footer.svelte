@@ -51,11 +51,11 @@
 				<h2 class="footer-nav-group-heading u-font-md">
 					{@html $_(col.title)}
 				</h2>
-				
+
 				<ul class="footer-nav-group-list">
 					{#each col.children as child}
 						<li class="footer-nav-group-item">
-							<a href="./{$locale}/Data/{child.href}" class="footer-nav-group-link" aria-current={segment === child.href ? "page" : null}>
+							<a href="./{child.href}" class="footer-nav-group-link" aria-current={segment === child.href ? "page" : null}>
 								{@html $_(child.title)}
 							</a>
 						</li>
@@ -151,7 +151,7 @@
 		/* theming */
 		background-color: transparent;
 		opacity: 0.75;
-		transition: 
+		transition:
 			opacity $timing,
 			background-color $timing;
 

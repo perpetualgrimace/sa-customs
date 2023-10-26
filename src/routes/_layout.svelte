@@ -1,11 +1,11 @@
 <script context="module">
-	import { textDirection } from "../../../i18n/i18n.js";
+	import { textDirection } from "../i18n/i18n.js";
 </script>
 
 
 <script>
-	import Nav from '../../../components/Nav.svelte';
-	import Footer from '../../../components/Footer.svelte';
+	import Nav from '../components/Nav.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	export let segment; // current slug
 </script>
@@ -18,7 +18,7 @@
 		<slot />
 	</main>
 
-	<Footer {segment} />	
+	<Footer {segment} />
 </div>
 
 

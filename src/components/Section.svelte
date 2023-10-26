@@ -14,7 +14,7 @@
 
 	// NOTE: ternary needed here instead of {#each} in template below
 	// Svelte was losing track and moving the heading below the slot when switching locales
-	$: heading = title 
+	$: heading = title
 		? `<${headingEl} class="section-heading${ fullwidth ? " is-fullwidth" : "" }"${ slug ? ` id=${slug}` : ""}>
 			${title}
 			${timeframe ? `
@@ -112,6 +112,20 @@
 			& + * {
 				width: calc(100% - (13rem + #{$sp-lg + $sp-md}));
 			}
+		}
+	}
+
+	.sidebar a {
+		opacity: 0.8;
+  	transition: opacity $timing;
+
+		&:hover, &:focus,
+		&[aria-current="page"] {
+			opacity: 1;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
 		}
 	}
 </style>

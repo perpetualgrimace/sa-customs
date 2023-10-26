@@ -2,49 +2,47 @@
 	import {stores} from '@sapper/app';
 	import { locale, _ } from 'svelte-i18n';
 
-	import findPage from '../../../../../helpers/findPage.js';
-	import truncateProduct from '../../../../../helpers/truncateProduct.js';
-	import {abbreviateNumber, addCommas, growth, removeTrailingZeroes, removeDecimal, isPositive} from '../../../../../helpers/formatters.js';
+	import findPage from '../../../helpers/findPage.js';
+	import {abbreviateNumber, growth, isPositive} from '../../../helpers/formatters.js';
 
-	import {importPages} from '../../imports-and-exports.svelte';
+	import {exportPages} from '../../imports-and-exports.svelte';
 
-	import Hero from '../../../../../components/Hero.svelte';
-	import Section from '../../../../../components/Section.svelte';
-	import Stat from '../../../../../components/Stat.svelte';
-	import Substats from '../../../../../components/Substats.svelte';
-	import Toplist from '../../../../../components/Toplist.svelte';
+	import Hero from '../../../components/Hero.svelte';
+	import Section from '../../../components/Section.svelte';
+	import Stat from '../../../components/Stat.svelte';
+	import Toplist from '../../../components/Toplist.svelte';
 
 	// data
-	import {customs_imports_2019_total as importsTotal} from "../../../../../data/customs_imports_2019_total.svelte";
-	import {customs_imports_growth_total as importsGrowth} from "../../../../../data/customs_imports_growth_total.svelte";
-	import {customs_imports_2019_hs4_top_10 as importsTopProducts} from "../../../../../data/customs_imports_2019_hs4_top_10.svelte";
-	import {customs_imports_2019_countries_top_10 as importsTopCountries} from "../../../../../data/customs_imports_2019_countries_top_10.svelte";
+	import {customs_exports_2019_total as exportsTotal} from "../../../data/customs_exports_2019_total.svelte";
+	import {customs_exports_growth_total as exportsGrowth} from "../../../data/customs_exports_growth_total.svelte";
+	import {customs_exports_2019_hs4_top_10 as exportsTopProducts} from "../../../data/customs_exports_2019_hs4_top_10.svelte";
+	import {customs_exports_2019_countries_top_10 as exportsTopCountries} from "../../../data/customs_exports_2019_countries_top_10.svelte";
 
 	// retrieve slug from store
 	const {page} = stores();
 	const {slug} = $page.params;
 
 	// use slug to find current page in list of pages
-	export let p = findPage(slug, importPages);
-	$: pageTitle = $_(`importsAndExports.imports.${p.slug.split("-")[0]}`);
+	export let p = findPage(slug, exportPages);
+	$: pageTitle = $_(`importsAndExports.exports.${p.slug.split("-")[0]}`);
 
 	export let imgPath = `imports-and-exports/${
-		slug.replace("-imports", "").replace("-product", "")
+		slug.replace("-exports", "").replace("-product", "")
 	}-hero`;
 
 	// hero stats
 	$: heroStats = [
 		{
-			label: $_("importsAndExports.imports.totalSeaportImports"),
+			label: $_("importsAndExports.exports.totalSeaportExports"),
 			timeframe: "2019",
-			value: abbreviateNumber(importsTotal.get("2019") * 1000000, $locale, true),
+			value: abbreviateNumber(exportsTotal.get("2019") * 1000000, $locale, true),
 			fontSize: "xl"
 		},
 		{
 			label: $_("_.growth"),
 			timeframe: "2018–2019",
-			value: growth(importsGrowth.get("2019")),
-			trend: isPositive(importsGrowth.get("2019")) ? "positive" : "negative",
+			value: growth(exportsGrowth.get("2019")),
+			trend: isPositive(exportsGrowth.get("2019")) ? "positive" : "negative",
 			fontSize: "xl"
 		}
 	];
@@ -52,13 +50,13 @@
 	// top lists
 	$: nameKey = $locale === "en" ? "name" : "name_ar";
 
-	$: topProducts = importsTopProducts.map(product => Object.assign({}, {
+	$: topProducts = exportsTopProducts.map(product => Object.assign({}, {
 		name: product.name,
 		name_ar: product.name_ar,
 		value: abbreviateNumber(product.value * 1000000, $locale, true)
 	}));
 
-	$: topExporters = importsTopCountries.map(country => Object.assign({}, {
+	$: topImporters = exportsTopCountries.map(country => Object.assign({}, {
     name: country.name,
     name_ar: country.name_ar,
     value: abbreviateNumber(country.value * 1000000, $locale, true)
@@ -74,7 +72,7 @@
 <Hero title={pageTitle} img={imgPath}>
 	{#each heroStats as statProps}
 		<Stat {...statProps} />
-	{/each}
+		{/each}
 </Hero>
 
 
@@ -108,10 +106,10 @@
 
 	<div class="section-col u-margin-bottom-md">
 		<Toplist
-			title={$_("importsAndExports.topExportersByValue")}
+			title={$_("importsAndExports.topImportersByValue")}
 			timeframe="2019"
 			classes="u-margin-top-sm"
-			items={topExporters}
+			items={topImporters}
 			nameKey={nameKey}
 			showFlags={true}
 			valueAlignment="right"

@@ -47,21 +47,21 @@
 	$: currPage = $page.path;
 
 	function setLocaleLink(href, locale) {
-		let slug = href.split("/Data/")[1]; // get everything after /Data/
+		let slug = href.split("/data/")[1]; // get everything after /data/
 
 		// assume home page
 		if (typeof slug === "undefined") {
-			return `./${locale}/Data/`;
+			return `./${locale}/data/`;
 		}
 
-		return `./${locale}/Data/${slug}`;
+		return `./${locale}/data/${slug}`;
 	}
 </script>
 
 
 <nav class="main-nav" aria-label={$_("_.nav.mainNavLabel")}>
 
-	<a href="./{$locale}/Data/"
+	<a href="./"
 		class="main-nav-logo"
 		aria-label={$_("_.nav.backToHomePage")}
 		aria-current={segment ? null : "page"}
@@ -75,11 +75,11 @@
 		>
 	</a>
 
-	<ul class="main-nav-locale-list">
+	<!-- <ul class="main-nav-locale-list">
 		{#each $locales as loc}
 			<li class="main-nav-locale-item">
 				{#if loc !== $locale}
-					<a 
+					<a
 						href={setLocaleLink(currPage, loc)}
 						class="main-nav-locale-link"
 						on:click={locale.set(loc)}
@@ -93,14 +93,14 @@
 				{/if}
 			</li>
 		{/each}
-	</ul>
+	</ul> -->
 
 	<Button classes="main-nav-toggle u-hide-above-nav" on:click={toggleNav} pressed={navOpen}>
 		{$_("_.nav.menuButtonLabel")} <span class="main-nav-toggle-icon">{navOpen ? "╳" : "☰"}</span>
 	</Button>
 
 	<ul class="main-nav-list">
-		<NavItem data={{title: "home.navLink", href: `./${$locale}/Data`}} segment={segment} classes="u-hide-above-nav" on:click={closeNav} />
+		<NavItem data={{title: "home.navLink", href: `.`}} segment={segment} classes="u-hide-above-nav" on:click={closeNav} />
 		{#each temporaryRoutes as data}
 			<NavItem data={data} segment={segment} on:click={closeNav} />
 		{/each}
@@ -123,7 +123,7 @@
 			top: 0;
 			width: 100%;
 			z-index: 2;
-			box-shadow: 0 2px 1rem rgba($navy-dark, 0.5);	
+			box-shadow: 0 2px 1rem rgba($navy-dark, 0.5);
 
 			/* offset nav height so content isn't cut off */
 			& + * {
@@ -146,7 +146,7 @@
 		/* reset link */
 		text-decoration: none;
 		color: $white;
-	
+
 		/* beta */
 		&:after {
 			display: block;

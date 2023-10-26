@@ -1,30 +1,30 @@
 <script>
 	import { locale, _ } from 'svelte-i18n';
-	
+
 	const dev = process.env.NODE_ENV === 'development';
 
-	import Button from '../../../components/Button.svelte';
-	import ButtonGroup from '../../../components/ButtonGroup.svelte';
-	import Listbox from '../../../components/Listbox.svelte';
-	import Section from '../../../components/Section.svelte';
-	import Select from '../../../components/Select.svelte';
-	import StatCard from '../../../components/StatCard.svelte';
-	
-	import ClearanceTime from '../../../components/icons/stat-card/ClearanceTime.svelte';
-	import Chevron from '../../../components/icons/Chevron.svelte';
+	import Button from '../components/Button.svelte';
+	import ButtonGroup from '../components/ButtonGroup.svelte';
+	import Listbox from '../components/Listbox.svelte';
+	import Section from '../components/Section.svelte';
+	import Select from '../components/Select.svelte';
+	import StatCard from '../components/StatCard.svelte';
 
-	import {export_countries_dropdown} from '../../../data/export_countries.svelte';
-	import {import_countries_dropdown} from '../../../data/import_countries.svelte';
-	import {export_ports_dropdown} from '../../../data/export_ports.svelte';
-	import {import_ports_dropdown} from '../../../data/import_ports.svelte';
-	import {export_hs4_dropdown} from '../../../data/export_hs4.svelte';
-	import {import_hs4_dropdown} from '../../../data/import_hs4.svelte';
-	import {export_data} from '../../../data/export_data.svelte';
-	import {import_data} from '../../../data/import_data.svelte';
+	import ClearanceTime from '../components/icons/stat-card/ClearanceTime.svelte';
+	import Chevron from '../components/icons/Chevron.svelte';
+
+	import {export_countries_dropdown} from '../data/export_countries.svelte';
+	import {import_countries_dropdown} from '../data/import_countries.svelte';
+	import {export_ports_dropdown} from '../data/export_ports.svelte';
+	import {import_ports_dropdown} from '../data/import_ports.svelte';
+	import {export_hs4_dropdown} from '../data/export_hs4.svelte';
+	import {import_hs4_dropdown} from '../data/import_hs4.svelte';
+	import {export_data} from '../data/export_data.svelte';
+	import {import_data} from '../data/import_data.svelte';
 
 	// Delay shipping this
-	import {export_hs4_dyn_filter} from '../../../data/export_hs4_dyn_filter.svelte';
-	import {import_hs4_dyn_filter} from '../../../data/import_hs4_dyn_filter.svelte';
+	import {export_hs4_dyn_filter} from '../data/export_hs4_dyn_filter.svelte';
+	import {import_hs4_dyn_filter} from '../data/import_hs4_dyn_filter.svelte';
 
 	let importData = {
 		ports: import_ports_dropdown,
@@ -144,20 +144,20 @@
 
 		<!-- import/export select -->
 		<ButtonGroup label={$_("_.importExportControlLabel")} classes="u-margin-bottom-md">
-			<Button 
+			<Button
 				on:click={() => toggleMode("import")}
 				pressed={mode === "import"}
 			>
 				{$_("_.imports")}
 			</Button>
-			<Button 
-				on:click={() => toggleMode("export")} 
+			<Button
+				on:click={() => toggleMode("export")}
 				pressed={mode === "export"}
 			>
 				{$_("_.exports")}
 			</Button>
 		</ButtonGroup>
-	
+
 		<!-- product select -->
 		<Select
 			classes="ctc-product-select u-margin-bottom-md"
@@ -172,13 +172,13 @@
 
 		<!-- product display format -->
 		<ButtonGroup label={$_("ctc.productFormatLabel")} classes="u-margin-bottom-md" labelHidden={true}>
-			<Button 
+			<Button
 				on:click={() => toggleProductFormat("name")}
 				pressed={showProductNames}
 			>
 				{$_("ctc.productName")}
 			</Button>
-			<Button 
+			<Button
 				on:click={() => toggleProductFormat("code")}
 				pressed={!showProductNames}
 			>

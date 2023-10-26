@@ -1,8 +1,8 @@
 <script context="module">
-	import stripExtension from '../../../helpers/stripExtension.js';
+	import stripExtension from '../helpers/stripExtension.js';
 
-	import enPages from '../../../i18n/about/en/*.md';
-	import arPages from '../../../i18n/about/ar/*.md';
+	import enPages from '../i18n/about/en/*.md';
+	import arPages from '../i18n/about/ar/*.md';
 
 	export const pages = {
 		en: enPages.map(page => page = {

@@ -1,16 +1,17 @@
 <script context="module">
 	import { locale, _ } from 'svelte-i18n';
-	
-	import findPage from '../../../../helpers/findPage.js';
+
+	import findPage from '../../helpers/findPage.js';
 	import { pages } from '../_about.svelte';
 
-	import Hero from '../../../../components/Hero.svelte';
-	import Section from '../../../../components/Section.svelte';
+	import Hero from '../../components/Hero.svelte';
+	import Section from '../../components/Section.svelte';
 
 	// use slug to find current page in list of pages
 	export function preload(page) {
 
-		let p = findPage(page.params.slug, pages[page.params.lang]);
+		// let p = findPage(page.params.slug, pages[page.params.lang]);
+		let p = findPage(page.params.slug, pages["en"]);
 
 		return { p };
 	}
@@ -35,14 +36,14 @@
 
 	<!-- TODO: sidebar component -->
 	<ul class="sidebar">
-		<!-- <li><a href="{$locale}/Data/about/background">{$_("about.background.navLink")}</a></li>
-		<li><a href="{$locale}/Data/about/calculations">{$_("about.calculations.navLink")}</a></li>
-		<li><a href="{$locale}/Data/about/faq">{$_("about.faq.navLink")}</a></li> -->
-		<li><a href="{$locale}/Data/about/definitions">{$_("about.definitions.navLink")}</a></li>
-		<li><a href="{$locale}/Data/about/disclaimer">{$_("about.disclaimer.navLink")}</a></li>
+		<li><a href="about/definitions" aria-current={p.slug === "definitions" ? "page" : null}>
+			{$_("about.definitions.navLink")}
+		</a></li>
+		<li><a href="about/disclaimer" aria-current={p.slug === "disclaimer" ? "page" : null}>
+			{$_("about.disclaimer.navLink")}
+		</a></li>
 	</ul>
 
-	<!-- TODO: content -->
 	<article class="content">
 		{@html p.content}
 	</article>

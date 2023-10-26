@@ -1,8 +1,8 @@
 <script>
 	import { _ } from 'svelte-i18n';
 
-	import Hero from '../../../components/Hero.svelte';
-	import Section from '../../../components/Section.svelte';
+	import Hero from '../components/Hero.svelte';
+	import Section from '../components/Section.svelte';
 
 	export const pages = [
 		{
@@ -32,12 +32,12 @@
 	<ul>
 		{#each pages as page}
 			<li>
-				<a href={`./{$locale}/Data/ports/${page.slug}`}>
+				<a href={`./ports/${page.slug}`}>
 					{page.title}
 				</a>
 			</li>
 		{/each}
-	</ul>	
+	</ul>
 </Section>
 
 

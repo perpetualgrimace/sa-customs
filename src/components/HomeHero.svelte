@@ -35,7 +35,7 @@
 	</div>
 
 	<!-- jump to first section -->
-	<a href="./{$locale}/Data/#{slugifiedJumpLink}" class="home-hero-jumper u-hide-below-md" aria-hidden="true">
+	<a href="./#{slugifiedJumpLink}" class="home-hero-jumper u-hide-below-md" aria-hidden="true">
 		<Chevron />
 	</a>
 
