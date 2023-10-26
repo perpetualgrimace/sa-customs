@@ -3,7 +3,6 @@
 
 	import slugify from "../helpers/slugify.js";
 
-	import Hero from "./Hero.svelte"; // inherit styles (not sure if there's a better way)
 	import Chevron from "./icons/Chevron.svelte";
 
 	export let title = "undefined `title` prop in Hero component";
@@ -13,7 +12,7 @@
 	export let jumpLink = "Top countries";
 	const slugifiedJumpLink = slugify(jumpLink);
 
-	// Image file name expected, without the extension. 
+	// Image file name expected, without the extension.
 	// 1x (1440px) & 2x (2880px) files are assumed, with @2x appended to the 2x filename
 	export let img;
 	export let imgFormat = "jpg";
@@ -42,9 +41,9 @@
 
 	<!-- bg image -->
 	{#if img}
-		<img 
-			class="home-hero-img hero-img" 
-			src={img1x} 
+		<img
+			class="home-hero-img hero-img"
+			src={img1x}
 			srcset={`${img1x} 1440w, ${img2x} 2880w`}
 			size="100vw"
 			alt=""
@@ -62,6 +61,11 @@
 	/* override .hero min-height */
 	.hero.home-hero {
 		min-height: calc(60vh + #{$sp-xl * 2});
+		/* the next 4 lines are redundant, but these styles weren't being applied on first render */
+		display: flex;
+		padding: $sp-xl $sp-xl;
+		.home-hero-inner { margin: auto; }
+		.home-hero-img { @include absolute-expand; z-index: -1; }
 	}
 
 	.home-hero-subhead {
